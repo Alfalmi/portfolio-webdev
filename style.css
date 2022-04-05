@@ -13,8 +13,9 @@
 }
 
 .about-container {
-    
+
     font-family: 'Josefin Sans', sans-serif;
+    margin-top: 50px;
 }
 
 /* text css above hero image*/
@@ -50,18 +51,26 @@
 .servicesText.card {
     height: 280px;
     cursor: pointer;
-  }
+}
+
 .servicesIcon {
     font-size: 36px;
     text-align: center;
     width: 100%;
 }
+
+.card {
+    background-color: #000000;
+}
+
 .card-title {
     text-align: center;
 }
+
 .card:hover .servicesIcon {
     color: #008000;
 }
+
 .servicesText:hover {
     border: 1px solid #008000;
 }
@@ -69,24 +78,32 @@
 .navbar {
     background-color: #1a1616d6;
     font-family: 'Roboto Condensed', sans-serif;
-    
+
 }
 
 /* display background color black on navbar scroll */
 .navbarScroll.navbarDark {
     background-color: black;
 }
+
 /* social media icons styling */
 .social-icons {
     font-size: 36px;
     cursor: pointer;
 }
-.fa-facebook:hover,.fa-instagram:hover,.fa-twitter:hover,.fa-linkedin:hover, .fa-twitch:hover {
+
+.fa-facebook:hover,
+.fa-instagram:hover,
+.fa-twitter:hover,
+.fa-linkedin:hover,
+.fa-twitch:hover {
     color: #008000;
 }
+
 .fab {
     color: #000000;
 }
+
 /* footer styling */
 #footer {
     background-color: #808080;
@@ -94,10 +111,14 @@
 }
 
 /* spacing on all sections */
-#about, #services, #portfolio, #contact {
+#about,
+#services,
+#portfolio,
+#contact {
     margin-top: 4rem;
     padding-top: 4rem;
 }
+
 #contact {
     padding-bottom: 4rem;
 }
@@ -107,12 +128,19 @@
     font-size: 36px;
     cursor: pointer;
 }
-.fa-facebook:hover,.fa-instagram:hover,.fa-twitter:hover,.fa-linkedin:hover, .fa-twitch:hover {
+
+
+.fa-instagram:hover,
+.fa-github:hover,
+.fa-linkedin:hover,
+.fa-twitch:hover {
     color: #008000;
 }
+
 .fab {
     color: #000000;
 }
+
 /* footer styling */
 #footer {
     background-color: #808080;
@@ -120,10 +148,66 @@
 }
 
 /* spacing on all sections */
-#about, #services, #portfolio, #contact {
+#about,
+#services,
+#portfolio,
+#contact {
+    font-family: 'Josefin Sans', sans-serif;
     margin-top: 4rem;
     padding-top: 4rem;
 }
+
 #contact {
     padding-bottom: 4rem;
+}
+
+.contact-form {
+    margin-left: 15vw;
+}
+
+.contact-text {
+    margin-left: 25vw;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.send-email-btn {
+    color: aqua;
+    margin-left: 385px;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.container-hobbies {
+    font-family: 'Josefin Sans', sans-serif;
+    width: 400px;
+    height: 255px;
+    
+    width: 50px;
+	height: 50px;
+    justify-content: center;
+}
+
+.hobbies {
+    display: inline-block;
+   margin-top: 20px;
+    width: 300px;
+    
+	
+}
+
+.skills {
+    display: inline-block;
+    
+    
+    margin-left: 50px;
+    width: 300px;
+	
+    
+}
+
+.about-title {
+    margin-bottom: 50px;
+}
+
+.portfolioContent {
+    text-align: center;
 }
