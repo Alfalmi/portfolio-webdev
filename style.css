@@ -174,13 +174,13 @@ body {
 }
 
 .contact-text {
-    margin-left: 25vw;
+    margin-left: 26vw;
     font-family: 'Josefin Sans', sans-serif;
 }
 
 .send-email-btn {
     color: aqua;
-    margin-left: 385px;
+    margin-left: 30vw;
     font-family: 'Josefin Sans', sans-serif;
 }
 
@@ -197,7 +197,7 @@ body {
 .hobbies {
     display: inline-block;
    margin-top: 20px;
-    width: 300px;
+    width: 250px;
     
 	
 }
@@ -207,7 +207,7 @@ body {
     
     
     margin-left: 50px;
-    width: 300px;
+    width: 250px;
 	
     
 }
@@ -223,3 +223,4 @@ body {
 .portfolioContent:hover {
     border: #00030042 solid 2px;
 }
+
