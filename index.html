@@ -212,7 +212,7 @@
 
             <div class="col-lg-10">
                 <!-- form fields -->
-                <form class="form" method="POST" action="mail.php">
+                <form class="form" method="post" action="mail.php">
                     <input type="text" class="form-control mt-3" placeholder="Name" name="name" tabindex="1" id="name" required>
                     <input type="email" class="form-control mt-3" placeholder="Email" name="email" tabindex="2" id="email" required>
                     <input type="text" class="form-control mt-3" placeholder="Subject" name="subject" tabindex="3" id="subject" required>
@@ -221,7 +221,7 @@
                             placeholder="Project Details"></textarea>
                     </div>
                 
-                <button type="submit" class="btn btn-success mt-3 send-email-btn">Send</button>
+                <input type="submit" name="send" class="btn btn-success mt-3 send-email-btn"></input>
             </form>
 
             </div>
