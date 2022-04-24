@@ -5,6 +5,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--  Email.js  -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init('rKss5QG95aJIucFfp');
+        })();
+    </script>
+    <script src="./email.js"></script>
     <!-- linking css file -->
     <link rel="stylesheet" href="style.css">
     <!-- Bootstrap CSS -->
@@ -213,18 +222,26 @@
             <div class="col-lg-10">
                 <!-- form fields -->
                 <div class="container">
-                    <form class="form" onsubmit="sendEmail(); reset(); return false;">
-                        <input type="text" class="form-control mt-3" placeholder="Name" name="from_name" id="from_name" required>
-                        <input type="email" class="form-control mt-3" placeholder="Email" name="email" id="email" required>
-                        <input type="text" class="form-control mt-3" placeholder="Subject" name="subject" id="subject" required>
-                        <textarea class="mb-3 mt-3 form-control" rows="5" id="message" name="message" placeholder="Message"></textarea>
-                        <button type="submit" class="btn btn-success mt-3 send-email-btn">Send</button>
-                    </form>4
+                    <form id="form" class="form">
+                        <input type="text" class="form-control mt-3" placeholder="Name" name="from_name" id="from_name"
+                            required>
+                        <input type="email" class="form-control mt-3" placeholder="Email" name="email" id="email"
+                            required>
+                        <input type="text" class="form-control mt-3" placeholder="Subject" name="subject" id="subject"
+                            required>
+                        <textarea class="mb-3 mt-3 form-control" rows="5" id="message" name="message"
+                            placeholder="Message"></textarea>
+                        <button type="submit" class="btn btn-success mt-3 send-email-btn" id="button" value="Send Email">Send</button>
+                    </form>
                 </div>
-
-
-            
                 
+                <!-- <script type="text/javascript">
+                    emailjs.init('rKss5QG95aJIucFfp')
+                </script> -->
+                
+
+
+
 
 
             </div>
