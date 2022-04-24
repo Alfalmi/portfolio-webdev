@@ -1,58 +1,46 @@
-<!-- <?php
-
-
-
-// email info
-// $name = "ssd";//$_POST['name'];
-// $email = "sad@gamil.com"//;$_POST['email'];
-// $email_subject = "nias"//$_POST['subject'];
-// $email_body = "Goooo" //$_POST['message'];
-
-// create the email header
-// $email_to = "alfonso_alvarez@alfalmi.com";
-// $headers = "From: ";
-// $headers = "From: ".$email;
-// $headers .= $visitor_email;
-
-// //send email to user
-// if( mailmail($email_to, $email_subject, $email_body, $headers));{
-//     echo 'success';
-// }
-// else{
-//     echo 'not send';
-// }
-//     // 
-    // 
-    
-    // 
-    // header('Location: ../');
-// echo "<h2>Information: ";
-// echo "Name: " . $nombre . <br/>;
-// echo "Email: " . $email . <br/>;
-// echo "Subject: " . $subject . <br/>;
-?> -->
-
-
-
 <?php
-
-if (isset($_POST['send'])) {
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $subejct = $_POST['subject'];
-    $message = $_POST['message'];
-
-    $mailTo = "alfonso_alvarez@alfalmi.com";
-    $header = "From: noreply@example.com" . "\r\n";
-    $header.= "Reply-To: noreply@example.com" . "\r\n";
-    $header.= "X-Mailer: PHP/". phpversion();
-    // $txt = "You have recieved an e-mail from ".$name.".\r\n".$message;
-
-    $mail = @mail($email, $subject, $message, $header);
-    if ($mail) {
-        echo "<h4>Mail enviado</h4>";
-    }
-    // header("Location: index.php?mailsend")
+//Import PHPMailer classes into the global namespace
+//These must be at the top of your script, not inside a function
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+//Load Composer's autoloader
+require 'vendor/autoload.php';
+//get data from form
+$name = $_POST['name'];
+$email = $_POST['email'];
+$message = $_POST['message'];
+// preparing mail content
+$messagecontent ="Name = ". $name . "<br>Email = " . $email . "<br>Message =" . $message;
+//Create an instance; passing `true` enables exceptions
+$mail = new PHPMailer(true);
+try {
+    //Server settings
+    //$mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+    $mail->isSMTP();                                            //Send using SMTP
+    $mail->Host       = 'smtp.mailtrap.io';                     //Set the SMTP server to send through
+    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+    $mail->Username   = 'username_here';                     //SMTP username
+    $mail->Password   = 'password_here';                               //SMTP password
+   // $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+    $mail->Port       = 2525;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+    //Recipients
+    $mail->setFrom('from@example.com', 'Mailer');
+    $mail->addAddress('joe@example.net', 'Joe User');     //Add a recipient
+    $mail->addAddress('ellen@example.com');               //Name is optional
+    $mail->addReplyTo('info@example.com', 'Information');
+    $mail->addCC('cc@example.com');
+    $mail->addBCC('bcc@example.com');
+    //Attachments
+    //$mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
+   // $mail->addAttachment('photo.jpeg', 'photo.jpeg');    //Optional name
+    //Content
+    $mail->isHTML(true);                                  //Set email format to HTML
+    $mail->Subject = 'Here is the subject';
+    $mail->Body    = $messagecontent;
+    
+    $mail->send();
+    echo 'Message has been sent';
+} catch (Exception $e) {
+   // echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }
-
-?>

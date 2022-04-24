@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -63,8 +62,8 @@
     <section class="about-container" id="about">
         <div class="container mt-4 pt-4">
             <div class="about-title">
-            <h1 class="text-center">About Me</h1>
-        </div>
+                <h1 class="text-center">About Me</h1>
+            </div>
             <div class="row mt-4">
                 <div class="col-lg-4">
                     <img src="images/about.jpeg" class="imageAboutPage" alt="">
@@ -77,36 +76,37 @@
                         <div class="col-md-6">
                         </div>
                     </div>
-                   
+
                     <div class="row mt-3 about-text">
                         <p class="about-paragraph">
                             I am a self-taught web developer with a passion for
                             learning new technologies and technologies that are used in the industry. I have a
-                            background in the field of computer sciences. I have a strong desire to learn new things and I am always looking for new ways to improve myself.
+                            background in the field of computer sciences. I have a strong desire to learn new things and
+                            I am always looking for new ways to improve myself.
                         </p>
                         <div class="container-hobbies">
                             <div class="hobbies">
-                        <h1>Hobbies</h1>
-                        <ul>
-                            <li>Music</li>
-                            <li>Guitar</li>
-                            <li>Art</li>
-                            <li>Robotics</li>
-                            <li>3D Print</li>
-                        </ul>
+                                <h1>Hobbies</h1>
+                                <ul>
+                                    <li>Music</li>
+                                    <li>Guitar</li>
+                                    <li>Art</li>
+                                    <li>Robotics</li>
+                                    <li>3D Print</li>
+                                </ul>
+                            </div>
+                            <div class="skills">
+                                <h1>Knowledge</h1>
+                                <ul>
+                                    <li>HTML</li>
+                                    <li>CSS</li>
+                                    <li>JavaScript</li>
+                                    <li>ReactJS</li>
+                                    <li>Python</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    <div class="skills">
-                        <h1>Knowledge</h1>
-                        <ul>
-                            <li>HTML</li>
-                            <li>CSS</li>
-                            <li>JavaScript</li>
-                            <li>ReactJS</li>
-                            <li>Python</li>
-                        </ul>
-                    </div>
-                    </div>
-                   </div>
                 </div>
             </div>
     </section>
@@ -212,22 +212,22 @@
 
             <div class="col-lg-10">
                 <!-- form fields -->
-                <form class="form" method="post" action="mail.php">
-                    <input type="text" class="form-control mt-3" placeholder="Name" name="name" tabindex="1" id="name" required>
-                    <input type="email" class="form-control mt-3" placeholder="Email" name="email" tabindex="2" id="email" required>
-                    <input type="text" class="form-control mt-3" placeholder="Subject" name="subject" tabindex="3" id="subject" required>
-                    <div class="mb-3 mt-3">
-                        <textarea class="form-control" rows="5" id="comment" name="text"
-                            placeholder="Project Details"></textarea>
-                    </div>
+                <div class="container">
+                    <form class="form" onsubmit="sendEmail(); reset(); return false;">
+                        <input type="text" class="form-control mt-3" placeholder="Name" name="from_name" id="from_name" required>
+                        <input type="email" class="form-control mt-3" placeholder="Email" name="email" id="email" required>
+                        <input type="text" class="form-control mt-3" placeholder="Subject" name="subject" id="subject" required>
+                        <textarea class="mb-3 mt-3 form-control" rows="5" id="message" name="message" placeholder="Message"></textarea>
+                        <button type="submit" class="btn btn-success mt-3 send-email-btn">Send</button>
+                    </form>4
+                </div>
+
+
+            
                 
-                <input type="submit" name="send" class="btn btn-success mt-3 send-email-btn"></input>
-            </form>
+
 
             </div>
-
-
-        </div>
     </section>
 
     <!-- footer section-->
